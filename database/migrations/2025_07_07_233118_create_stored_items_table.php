@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('stored_items', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('chemical_product_id')->constrained('chemical_products');
             $table->string('manufacturer')->nullable();
             $table->string('batch')->nullable();
             $table->date('expiration')->nullable();
